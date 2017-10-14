@@ -8,7 +8,7 @@ namespace Quartz.NETSample.Models
     {
         public void Execute(IJobExecutionContext context)
         {
-            using (var message = new MailMessage("luis.tupiac@gmail.com", "luis.tupiac@gmail.com"))
+            using (var message = new MailMessage("from", "to"))
             {
                 message.Subject = "Email Test";
                 message.Body = "Prueba " + DateTime.Now;
@@ -16,7 +16,7 @@ namespace Quartz.NETSample.Models
                 {
                     Host = "smtp.gmail.com",
                     Port = 587,
-                    Credentials = new NetworkCredential("luis.tupiac@gmail.com", "yordan.91"),
+                    Credentials = new NetworkCredential("account", "passw0rd"),
                     EnableSsl = true
                 })
                 {
